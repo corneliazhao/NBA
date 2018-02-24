@@ -8,7 +8,7 @@
 #' oldest_player()
 
 oldest_player <- function(x){
-  age <- filter(arrange(select(nba, Year, Player, Age), desc(Age)), Year == x)
+  age <- dplyr::filter(dplyr::arrange(dplyr::select(nba, Year, Player, Age), desc(Age)), Year == x)
   output2 <- age[1,2]
   return(output2)
 }

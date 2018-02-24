@@ -8,9 +8,9 @@
 #' cor_mat()
 
 cor_mat <- function(x){
-  data <- filter(nba, Year == x)
+  data <- dplyr::filter(nba, Year == x)
   data2 <- sapply(data, is.numeric)
   data_num <- data[ , data2, drop = FALSE]
-  output3 <- cor(as.matrix(data_num))
+  output3 <- stats::cor(as.matrix(data_num))
   return(output3)
 }

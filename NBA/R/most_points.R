@@ -8,7 +8,7 @@
 #' most_points()
 
 most_points <- function(x){
-  year <- filter(arrange(select(nba, Year, Player, PTS), desc(PTS)), Year == x)
+  year <- dplyr::filter(dplyr::arrange(dplyr::select(nba, Year, Player, PTS), desc(PTS)), Year == x)
   output <- year[1,2]
   return(output)
 }
